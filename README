@@ -1,0 +1,20 @@
+Lampka
+
+Projekt zakłada użycie wbudowanego akcelerometru (MMA8451Q) do sterowania wbudowaną diodą RGB. 
+Urządzenie powinno aktywować dany kolor tapnięciem w np. stół, wybór kolorów będzie możliwy w zależności od  ilości impulsów urządzenia. 
+
+W tym celu zostanie wykorzystane: 
+1. płytka FRDM-KL05z
+1. akcelerometru  MMA8451Q 
+1. wbudowana dioda RGB 
+
+Zakładany protokół komunikacji pomiędzy akcelerometrem a mikrokontrolerem to  **I2C**.
+
+Zadania do wykonania:
+* Stworzenie biblioteki do obsługi I2C 
+* Napisanie biblioteki do obsługi sterowania PWM diodą RGB
+* Analiza danych z  akcelerometru i filtrowanie ich tak, by odfiltrować zjawiska wyzwalające od szumu. 
+* Sterowanie diodą na podstawie otrzymanych danych. 
+
+Diagram przedstawiający funkcjonalność programu:
+![Diagram](/schemat.png)
