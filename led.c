@@ -20,8 +20,6 @@ volatile int delay;
 	PTB->PSOR = green_mask|red_mask|blue_mask;        /* All LED's off */
 	PTB->PDDR = green_mask|red_mask|blue_mask	;        /* enable LED RGB as Output */
 	PTA->PDDR =~(1UL<<IN1_PIN);
-	
-
 
 //Welcome sequence
 	for(delay=0; delay<300000; delay++);
@@ -60,7 +58,21 @@ void ledBlueOn (void) {
 	FPTB->PSOR=red_mask;          	/* switch Red LED off  */
 	FPTB->PCOR=blue_mask;						/* switch Blue LED off  */
 }
-
+void ledYellowOn (void) {
+	FPTB->PCOR=green_mask;       		/* switch Green LED on */
+	FPTB->PCOR=red_mask;          	/* switch Red LED on */
+	FPTB->PSOR=blue_mask;						/* switch Blue LED off  */
+}
+void ledPurpleOn (void) {
+	FPTB->PSOR=green_mask;       		/* switch Green LED off */
+	FPTB->PCOR=red_mask;          	/* switch Red LED on */
+	FPTB->PCOR=blue_mask;						/* switch Blue LED on  */
+}
+void ledUnknownOn (void) {
+	FPTB->PCOR=green_mask;       		/* switch Green LED on */
+	FPTB->PSOR=red_mask;          	/* switch Red LED off */
+	FPTB->PCOR=blue_mask;						/* switch Blue LED on  */
+}
 
 /*----------------------------------------------------------------------------
   Function that turns all LEDs off
