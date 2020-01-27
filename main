@@ -1,0 +1,15 @@
+#include "MKL05Z4.h"                    	/* Device header */
+#include "i2c.h"
+#include "led.h"
+#include "pit.h"
+#include "tap_det.h"
+volatile uint8_t sequence;
+int main(void)
+{volatile int delay;
+	
+	//accel_interupt();
+		for(delay=0; delay<600000; delay++);
+	ledsInitialize();
+	PitInitialize();
+	tap_det();
+}
