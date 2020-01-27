@@ -11,5 +11,8 @@ void ledGreenOff (void);
 void ledGreenOn (void);
 void ledRedOn (void);
 void ledBlueOn (void);
+void ledYellowOn (void);
+void ledPurpleOn (void);
+void ledUnknownOn (void);
 int32_t buttonRead(void);
 #endif
